@@ -3,8 +3,8 @@ import Rating from './Rating'
 
 export default class Player 
 {
-    private pre: Rating;
-    private post: Rating;
+    public pre: Rating;
+    public post: Rating;
     public matches: Match[];
 
     constructor(pre: Rating) {
