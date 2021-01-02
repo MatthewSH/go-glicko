@@ -1,7 +1,5 @@
 import { MatchResult } from './Match';
-import Period from './Period';
-import Player from './Player';
-import Rating from './Rating';
+import { Period, Player, Rating } from './Glicko2';
 
 let players: Player[] = [];
 let period: Period;
