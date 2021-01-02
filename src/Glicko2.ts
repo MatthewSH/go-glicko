@@ -1,6 +1,6 @@
-export default class Glicko2 
-{
-    constructor() {
-        console.warn('Looks like you have created a new Glicko2 instance. No need!');
-    }
-}
+import Match from './Match';
+import Period from './Period';
+import Player from './Player';
+import Rating from './Rating';
+
+export { Match, Period, Player, Rating };
