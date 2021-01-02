@@ -5,7 +5,7 @@ export default class Player
 {
     private pre: Rating;
     private post: Rating;
-    private matches: Match[];
+    public matches: Match[];
 
     constructor(pre: Rating) {
         this.pre = pre;
