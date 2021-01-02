@@ -4,8 +4,9 @@ import Player from './Player';
 
 export default class Period
 {
-    private tau: number = 0.5;
     private players: Player[] = [];
+
+    constructor(private tau: number = 0.5) {}
 
     public addPlayer(player: Player) {
         this.players.forEach((p: Player) => {
