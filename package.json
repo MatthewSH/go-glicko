@@ -1,6 +1,6 @@
 {
   "name": "go-glicko",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A TypeScript/JavaScript version of Glicko2 by Aleksandr Zelenin",
   "tags": [
     "glicko",
@@ -9,7 +9,13 @@
     "mmr",
     "elo",
     "matchmaking rating",
-    "rating"
+    "rating",
+    "ranking",
+    "statistics",
+    "math",
+    "multiplayer",
+    "sports",
+    "algorithm"
   ],
   "main": "./lib/Glicko2.js",
   "types": "./lib/Glicko2.d.ts",
