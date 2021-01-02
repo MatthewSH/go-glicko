@@ -1,5 +1,4 @@
-import { MatchResult } from './Match';
-import { Period, Player, Rating } from './Glicko2';
+import { MatchResult, Period, Player, Rating } from './Glicko2';
 
 let players: Player[] = [];
 let period: Period;
