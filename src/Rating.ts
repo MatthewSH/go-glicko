@@ -7,11 +7,11 @@ export default class Rating
     public static readonly BASE_RD: number = 350;
     public static readonly BASE_SIGMA: number = 0.06;
 
-    private rating!: number;
-    private ratingDeviation!: number;
-    private sigma!: number;
-    private mu!: number;
-    private phi!: number;
+    public rating!: number;
+    public ratingDeviation!: number;
+    public sigma!: number;
+    public mu!: number;
+    public phi!: number;
 
     constructor(rating: number, ratingDeviation: number, sigma: number) {
         this.setRating(rating);
