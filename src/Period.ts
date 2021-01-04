@@ -4,16 +4,16 @@ import Player from './Player';
 
 export default class Period
 {
-    private players: { [key: string]: Player } = {};
+    private players: Map<string, Player> = new Map();
 
     constructor(private tau: number = 0.5) {}
 
     public addPlayer(player: Player) {
-        if (this.players[player.uuid]) {
+        if (this.players.has(player.uuid)) {
             return;
         }
 
-        this.players[player.uuid] = player;
+        this.players.set(player.uuid, player);
     }
 
     public addMatch(player1: Player, player2: Player, score: MatchResult) {
@@ -27,12 +27,7 @@ export default class Period
     }
 
     public Calculate() {
-        let keys = Object.keys(this.players);
-        let keysLength = keys.length;
-
-        for (let i = 0; i < keysLength; i++) {
-            let player = this.players[keys[i]];
-
+        for (let [uuid, player] of this.players.entries()) {
             if (player.matches.length > 0) {
                 let v: number = this.v(player);
                 let dp: number = this.delta(player);
