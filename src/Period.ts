@@ -4,18 +4,16 @@ import Player from './Player';
 
 export default class Period
 {
-    private players: Player[] = [];
+    private players: { [key: string]: Player } = {};
 
     constructor(private tau: number = 0.5) {}
 
     public addPlayer(player: Player) {
-        this.players.forEach((p: Player) => {
-            if (p == player) {
-                return;
-            }
-        });
+        if (this.players[player.uuid]) {
+            return;
+        }
 
-        this.players.push(player);
+        this.players[player.uuid] = player;
     }
 
     public addMatch(player1: Player, player2: Player, score: MatchResult) {
@@ -29,7 +27,12 @@ export default class Period
     }
 
     public Calculate() {
-        this.players.forEach((player: Player) => {
+        let keys = Object.keys(this.players);
+        let keysLength = keys.length;
+
+        for (let i = 0; i < keysLength; i++) {
+            let player = this.players[keys[i]];
+
             if (player.matches.length > 0) {
                 let v: number = this.v(player);
                 let dp: number = this.delta(player);
@@ -43,7 +46,7 @@ export default class Period
             } else {
                 player.post.Touch();
             }
-        });
+        }
     }
 
     public v(player: Player): number {
