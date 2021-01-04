@@ -1,7 +1,7 @@
 {
   "name": "go-glicko",
-  "version": "1.0.0",
-  "description": "A TypeScript/JavaScript version of Glicko2 Go library by Aleksandr Zelenin",
+  "version": "1.1.0",
+  "description": "A TypeScript/JavaScript implementation of Glicko2 algorithm.",
   "tags": [
     "glicko",
     "glicko2",

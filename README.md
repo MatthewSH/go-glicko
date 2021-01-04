@@ -116,5 +116,8 @@ Even if a player doesn't play any matches in the rating period, they still need 
 It's player1 vs. player2 with the match result being attributed to player1.
 
 **Any benchmarks?**
+Yes! You can view them all for NodeJS [here](https://glicko2.com/benchmarks/nodejs/). Please keep in mind that this library is fundamentally different then others that exist, so
 
-None yet, but that is a goal of mine. Please keep up with the main GitHub repo [here](https://github.com/MatthewSH/go-glicko/) to see if anything changes.
+**What's different between 1.0.0 and 1.1.0?**
+When creating the benchmarks I realized there was a major issue with how I was adding players. While this worked fine in Go for what I was using it for it was detrimental in NodeJS.
+So I added `uuid` and created a unique ID for each player added and instead of constantly looping through an array of players we just check if the ID exists in the Map. In initial testing this increased general performance over the object method by 3-10% and in general over v1.0.0 well...it took a 6.97 hour benchmark to about 7 seconds.
